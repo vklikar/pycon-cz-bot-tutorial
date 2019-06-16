@@ -31,7 +31,7 @@ async def on_comment_posted(
 ):
     """Whenever an issue is opened, greet the author and say thanks."""
     github_api = RUNTIME_CONTEXT.app_installation_client
-    reactions_api_url = f'comment["url"]/reactions'
+    reactions_api_url = f'{comment["url"]}/reactions'
    
     await github_api.post(
         reactions_api_url,
